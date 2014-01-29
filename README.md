@@ -7,18 +7,22 @@ This cookbook makes your favorite breakfast sandwich.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+ntp
+zabbix
+ssh-keys
+chef-client
+set_hostname: https://github.com/three18ti/chef-cookbook-hostname/blob/master/recipes/default.rb
+
 
 e.g.
 #### packages
-- `toaster` - linux-base needs toaster to brown your bagel.
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
 e.g.
 #### linux-base::default
+
 <table>
   <tr>
     <th>Key</th>
@@ -27,19 +31,34 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['linux-base']['bacon']</tt></td>
+    <td><tt>default['zabbix']['agent']['servers']</tt></td>
+    <td>ArrayRef</td>
+    <td>Zabbix Servers list</td>
+    <td><tt>[ 'zabbix' ]</tt></td>
+  </tr>
+  <tr>
+    <td><tt>default['zabbix']['agent']['servers_active']</tt></td>
+    <td>ArrayRef</td>
+    <td>Zabbix ServersActive list</td>
+    <td><tt>['zabbix']</tt></td>
+  </tr>
+  <tr>
+    <td><tt>default['ntp']['peers']</tt></td>
+    <td>ArrayRef</td>
+    <td>NTP Peers</td>
+    <td><tt>['192.168.15.35', '192.168.15.40', '192.168.15.2']</tt></td>
+  </tr>
+  <tr>
+    <td><tt>default[:ssh_keys_keep_existing]</tt></td>
     <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td>Keep old ssh keys</td>
+    <td><tt>false</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### linux-base::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `linux-base` in your node's `run_list`:
 
 ```json

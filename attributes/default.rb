@@ -1,6 +1,8 @@
 default['zabbix']['agent']['servers'] = ['zabbix']
 default['zabbix']['agent']['servers_active'] = ['zabbix']
 
+default['zabbix']['server']['install_method'] = 'postgres'
+
 default['ntp']['peers'] = ['192.168.15.35', '192.168.15.40', '192.168.15.2']
 
 default[:ssh_keys_keep_existing] = false

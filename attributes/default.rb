@@ -1,5 +1,8 @@
-default['zabbix']['agent']['servers'] = ['zabbix']
-default['zabbix']['agent']['servers_active'] = ['zabbix']
+#default['zabbix']['agent']['servers'] = ['zabbix']
+#default['zabbix']['agent']['servers_active'] = ['zabbix']
+default['zabbix']['agent']['servers'] = ['192.168.15.158']
+default['zabbix']['agent']['servers_active'] = ['192.168.15.158']
+default['zabbix']['agent']['start_agents'] = 1
 
 default['zabbix']['server']['install_method'] = 'postgres'
 

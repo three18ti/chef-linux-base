@@ -27,6 +27,17 @@ node.normal[:ssh_keys] = { 'root' => ssh_users }
 include_recipe 'ssh-keys'
 
 
+{ "kitt" => "192.168.15.35", "shepard" => "192.168.15.2", "red6" => "192.168.15.40" }.each do |hostname, ip|
+    hostname_entry = hostsfile_entry "set hostname" do
+        ip_address #{ip}
+        hostname #{hostname}
+        action :create
+    end
+    puts "Name: #{name} Size: #{size}"
+end
+
+
+
 #log "ssh keys" do
 #    message "ssh_users: #{ssh_users}"
 #    level :warn

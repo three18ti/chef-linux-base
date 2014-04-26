@@ -27,13 +27,12 @@ node.normal[:ssh_keys] = { 'root' => ssh_users }
 include_recipe 'ssh-keys'
 
 
-{ "kitt" => "192.168.15.35", "shepard" => "192.168.15.2", "red6" => "192.168.15.40" }.each do |hostname, ip|
+{ "192.168.15.35" => "kitt kitt.localhost.tld", "192.168.15.2" => "shepard shepard.local.tld", "192.168.15.40" => "red6 red6.local.tld" }.each do |ip, hostname|
     hostname_entry = hostsfile_entry "set hostname" do
-        ip_address #{ip}
-        hostname #{hostname}
+        ip_address ip
+        hostname hostname
         action :create
     end
-    puts "Name: #{name} Size: #{size}"
 end
 
 

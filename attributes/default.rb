@@ -1,3 +1,5 @@
+default['chef_client']['config']['verify_api_cert'] = false
+
 #default['zabbix']['agent']['servers'] = ['zabbix']
 #default['zabbix']['agent']['servers_active'] = ['zabbix']
 default['zabbix']['agent']['servers'] = ['192.168.15.158']

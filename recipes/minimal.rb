@@ -1,4 +1,4 @@
-#
+# encoding: utf-8
 # Cookbook Name:: linux-base
 # Recipe:: minimal
 #
@@ -23,11 +23,3 @@ end
 node.normal[:ssh_keys] = { 'root' => ssh_users }
 
 include_recipe 'ssh-keys'
-
-
-#log "ssh keys" do
-#    message "ssh_users: #{ssh_users}"
-#    level :warn
-#end
-
-#node.normal[:ssh_keys] = { 'root' => ["root-chef-workstation"] }

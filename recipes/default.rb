@@ -11,6 +11,7 @@ include_recipe 'set_hostname'
 include_recipe 'chef-client'
 include_recipe 'zabbix'
 include_recipe 'ntp' 
+include_recipe 'snmp'
 
 ssh_users = []
 search(:users, "*:*").each do |user| 

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/three18ti/chef-linux-base.svg?branch=master)](https://travis-ci.org/three18ti/chef-linux-base)
+
 linux-base Cookbook
 ===================
 TODO: Enter the cookbook description here.
